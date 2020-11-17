@@ -4,16 +4,13 @@ services:
   db:
     restart: always
     container_name: decide_db
-    image: postgres:9.6-alpine
+    image: postgres:10.15-alpine
     volumes:
       - db:/var/lib/postgresql/data
     networks:
       - decide
     environment:
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_DB=postgres
-      - POSTGRES_HOST_AUTH_METHOD=trust
   web:
     restart: always
     container_name: decide_web
